@@ -1,6 +1,6 @@
 import { configDotenv } from "dotenv";
 import express, { json } from "express";
-import { connectDB } from "./database/database.js";
+import { connectDB } from "./database/db.js";
 
 configDotenv();
 
