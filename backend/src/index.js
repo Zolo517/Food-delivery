@@ -3,6 +3,7 @@ import express, { json } from "express";
 import { connectDB } from "./database/database";
 
 configDotenv();
+
 const port = process.env.PORT;
 const app = express();
 
