@@ -1,10 +1,15 @@
 import { Router } from "express";
 import {
   createFoodCategory,
+  deletefoodCategoryById,
   getfoodCategories,
+  updateCategoryName,
 } from "../controllers/foodCategoryController.js";
 
 export const categoryRouter = Router();
 
-categoryRouter.post("/", createFoodCategory);
-// .get("/", getfoodCategories);
+categoryRouter
+  .post("/", createFoodCategory)
+  .get("/", getfoodCategories)
+  .patch("/:id", updateCategoryName)
+  .delete("/:id", deletefoodCategoryById);
