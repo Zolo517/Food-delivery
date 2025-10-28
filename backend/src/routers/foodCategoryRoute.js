@@ -6,9 +6,9 @@ import {
   updateCategoryName,
 } from "../controllers/foodCategoryController.js";
 
-export const categoryRouter = Router();
+export const CategoryRouter = Router();
 
-categoryRouter
+CategoryRouter
   .post("/", createFoodCategory)
   .get("/", getfoodCategories)
   .patch("/:id", updateCategoryName)
