@@ -3,6 +3,8 @@ import express, { json } from "express";
 import { connectDB } from "./database/db.js";
 import { CategoryRouter } from "./routers/foodCategoryRoute.js";
 import { UserRouter } from "./routers/userRoute.js";
+import { FoodRouter } from "./routers/foodRoute.js";
+import { OrderRouter } from "./routers/foodOrderRoute.js";
 
 configDotenv();
 
@@ -13,6 +15,8 @@ app.use(json());
 
 app.use("/category", CategoryRouter);
 app.use("/auth", UserRouter);
+app.use("/food", FoodRouter);
+app.use("/food-order", OrderRouter);
 
 app.listen(port, () => {
   connectDB();
