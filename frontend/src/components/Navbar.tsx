@@ -1,4 +1,3 @@
-import Logo from "@/Icons/Logo";
 import { MapPin, ShoppingCart, User } from "lucide-react";
 import {
   DropdownMenu,
@@ -6,19 +5,12 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import { Logo } from "./Logo";
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-between">
-      <div className="flex gap-3">
-        <Logo />
-        <div>
-          <h4>
-            Om <span>Nom</span>
-          </h4>
-          <p>Swift delivery</p>
-        </div>
-      </div>
+    <div className="flex justify-between ">
+      <Logo />
       <div>
         <div>
           <MapPin />
