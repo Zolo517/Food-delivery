@@ -10,7 +10,7 @@ export const AllDishesCategory = () => {
         <div className="flex flex-wrap gap-3">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => {
             return (
-              <Button>
+              <Button key={el}>
                 All Dishes
                 <Badge>111</Badge>
               </Button>
