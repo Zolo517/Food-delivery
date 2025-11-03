@@ -2,7 +2,7 @@ import CompanyLogoSvg from "@/Icons/CompanyLogoSvg";
 
 export const Logo = () => {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 items-center">
       <CompanyLogoSvg />
       <div>
         <h4 className="text-lg font-semibold">
