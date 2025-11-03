@@ -1,6 +1,12 @@
 import * as React from "react";
 const MenuLogoSvg = (props: object) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="white" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={22}
+    height={22}
+    fill="white"
+    {...props}
+  >
     <path
       stroke="#09090B"
       strokeLinecap="round"

@@ -1,3 +1,4 @@
+import { AdminPageSideBar } from "@/components/AdminPageSideBar";
 import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 
