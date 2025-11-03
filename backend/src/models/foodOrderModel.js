@@ -1,9 +1,9 @@
 import { Schema, model } from "mongoose";
-import { User } from "./userModel.js";
+import { User } from "./userModel";
 
 const foodOrderSchema = new Schema(
   {
-    user: { type: String },
+    user: User,
     totalPrice: { type: Number, required: true },
     foodOrderItems: { type: Array },
     status: { type: String, enum: ["PENDING", "CANCELLED", "DELIVERED"] },
@@ -12,4 +12,4 @@ const foodOrderSchema = new Schema(
     timestamps: true,
   }
 );
-export const FoodOrder = model("foodOrder", foodOrderSchema);
+export const FoodOrder = model("foodOrder", foodOrderSchema)
