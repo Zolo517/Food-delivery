@@ -4,6 +4,7 @@ export default function AdminPage() {
   return (
     <div>
       <AdminPageSideBar />
+      <p></p>
     </div>
   );
 }

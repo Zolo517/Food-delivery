@@ -19,8 +19,8 @@ export const AdminPageSideBar = () => {
           </SidebarHeader>
           <SidebarContent className="w-full flex flex-col gap-6">
             <Button className="px-6 py-2 gap-2.5">
-              {/* <MenuLogoSvg /> */}
-              
+              <MenuLogoSvg />
+
               <p>Food Menu</p>
             </Button>
             <Button>

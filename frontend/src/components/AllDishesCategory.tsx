@@ -12,7 +12,7 @@ export const AllDishesCategory = () => {
             return (
               <Button>
                 All Dishes
-                <Badge>112</Badge>
+                <Badge>111</Badge>
               </Button>
             );
           })}

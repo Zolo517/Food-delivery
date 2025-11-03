@@ -24,7 +24,7 @@ export const Navbar = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <div className="">
-              <h3>sdfklghds;gl</h3>
+              <h3>hsdl</h3>
               <Button>Sign out</Button>
             </div>
           </DropdownMenuContent>

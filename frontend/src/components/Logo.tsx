@@ -5,10 +5,10 @@ export const Logo = () => {
     <div className="flex gap-3">
       <CompanyLogoSvg />
       <div>
-        <h4>
-          Om <span>Nom</span>
+        <h4 className="text-lg font-semibold">
+          Om <span className="text-lg font-semibold">Nom</span>
         </h4>
-        <p>Swift delivery</p>
+        <p className="text-[#71717A] text-xs ">Swift delivery</p>
       </div>
     </div>
   );

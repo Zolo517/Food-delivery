@@ -10,7 +10,7 @@ const categories = [
   "Fish & Sea foods",
   "Brunch",
   "Side dish",
-  "Desserts",
+  "Dess1erts",
   "Beverages",
 ];
 
