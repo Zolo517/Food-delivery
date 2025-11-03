@@ -1,0 +1,16 @@
+import { FormSection } from "./Feature/FormSection";
+
+export default function LoginPage() {
+  // const result = axios.post('https://localhost:4000/auth/login',{
+  //   headers:{
+  //     Authorization : ``
+  //   }
+  // })
+
+  return (
+    <div className="p-5 flex gap-12 ">
+      <FormSection />
+      <div className="w-full bg-[#064357] "></div>
+    </div>
+  );
+}
