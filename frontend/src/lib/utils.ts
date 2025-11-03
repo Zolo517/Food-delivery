@@ -6,4 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export const axiosInstance
+export const axiosInstance = ()=>{
+  
+}
