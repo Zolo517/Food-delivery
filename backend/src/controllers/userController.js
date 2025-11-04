@@ -12,11 +12,11 @@ export const signup = async (req, res) => {
       email,
       password: hashedPassword,
     });
-    if (email === user.email) {
-      res
-        .status(403)
-        .send({ message: "eamil is already registered", data: user });
-    }
+    // if (email === user.email) {
+    //   res
+    //     .status(403)
+    //     .send({ message: "eamil is already registered", data: user });
+    // }
     res.status(200).send({ message: "success", data: user });
   } catch (error) {
     console.error(error);
@@ -25,14 +25,17 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select("+password");
 
-    // if (!user.length) {
-    //   res.status(404).send({ message: "You have to sign up first" });
-    // }
+    if (!user) {
+      res.status(404).send({ message: "You have to sign up first" });
+    }
     //axiosInstance eer yaj req.bodygoos yum avj boldgiig oloh
-
+    console.log(password, "req.body");
+    console.log(user.password, "hashed password");
     const isCorrectPassword = bcrypt.compareSync(password, user.password);
+    console.log(isCorrectPassword, "correct pass");
+
     const token = jwt.sign({ ...isCorrectPassword }, "key", {
       expiresIn: "1h",
     });
