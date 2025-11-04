@@ -19,6 +19,19 @@ export const FormSection = () => {
   const backbtn = () => {
     setCurrentIndex(currentIndex - 1);
   };
+  const submitBtn = ()=>{
+    axios.post("https://localhost:4000/auth/sign-up")
+  } 
+// const validation = (email)=>{
+// if(currentIndex===0){
+//   if(email){
+
+//   }
+// }
+
+// }
+
+
   return (
     <div className="w-104 ml-20 flex flex-col justify-center gap-6">
       <Button variant={"outline"} className="font-semibold w-fit">

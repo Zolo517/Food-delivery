@@ -5,7 +5,7 @@ import { Label } from "./ui/label";
 
 export const SignUpStepTwo = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
   return (
-    <div className="flex flex-col gap-6">
+    <form className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
         <h3 className="text-[#09090B] text-2xl font-semibold">
           {" "}
@@ -39,6 +39,6 @@ export const SignUpStepTwo = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
         Already have an account?{" "}
         <span className="text-[#2563EB] text-base">Log in</span>
       </p>
-    </div>
+    </form>
   );
 };
