@@ -16,20 +16,29 @@ export const signup = async (req, res) => {
   }
 };
 export const login = async (req, res) => {
-  try {
+  try{
     const { email, password } = req.body;
     const user = await User.findOne({ email }).select("+password");
 
     if (!user) {
       res.status(404).send({ message: "You have to sign up first" });
     }
-
+    //axiosInstance eer yaj req.bodygoos yum avj boldgiig oloh
+    console.log(password, "req.body");
+    console.log(user.password, "hashed password");
     const isCorrectPassword = bcrypt.compareSync(password, user.password);
+    console.log(isCorrectPassword, "correct pass");
+
+    const token = jwt.sign({ ...isCorrectPassword }, "key", {
+      expiresIn: "1h",
+    });
 
     if (!isCorrectPassword) {
-      res.status(403).send({ message: "Wrong password" });
+      res.status(403).send({ message: "Wrong password", data: user });
+      console.log(token, "wrong pass token");
     }
-    res.status(200).send({ message: "success" });
+    res.status(200).send({ message: "success", data: user, token: token });
+    console.log(token, "success token");
   } catch (error) {
     console.error(error);
   }
