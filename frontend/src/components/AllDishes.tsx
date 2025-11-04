@@ -19,7 +19,7 @@ export const AllDishes = () => {
     <div>
       <AllDishesCategory />
       {categories.map((name) => {
-        return <Category name={name} />;
+        return <Category key={name} name={name} />;
       })}
     </div>
   );

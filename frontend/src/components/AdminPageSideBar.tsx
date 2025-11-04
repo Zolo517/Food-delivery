@@ -14,8 +14,8 @@ import Link from "next/link";
 
 export const AdminPageSideBar = () => {
   return (
-    <SidebarProvider>
-      <Sidebar className="py-9 px-5 flex flex-col w-[205px] bg-white">
+    
+      <div className="py-9 px-5 flex flex-col w-[205px] bg-white">
         <SidebarHeader>
           <Logo />
         </SidebarHeader>
@@ -37,7 +37,7 @@ export const AdminPageSideBar = () => {
             </Link>
           </SidebarGroupContent>
         </SidebarContent>
-      </Sidebar>
-    </SidebarProvider>
+      </div>
+
   );
 };
