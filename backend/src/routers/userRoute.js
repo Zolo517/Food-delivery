@@ -11,7 +11,7 @@ import {
 export const UserRouter = Router();
 
 UserRouter.post("/sign-up", signup)
-  .post("/login", login)
+  .post("/sign-in", login)
   .post("/reset-password-request", resetPasswordReq)
   .post("/reset-password", resetPassword)
   .get("/refresh", getRefreshedData)
