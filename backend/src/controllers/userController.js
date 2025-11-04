@@ -1,11 +1,14 @@
 import { User } from "../models/userModel.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 export const signup = async (req, res) => {
   try {
     const { email, password } = req.body;
     const hashedPassword = await bcrypt.hashSync(password, 10); //password , her ih davslah too
-
+    if (!email || !password) {
+      res.status().send({ message: "email and password are required" });
+    }
     const user = await User.create({
       email,
       password: hashedPassword,
@@ -16,7 +19,7 @@ export const signup = async (req, res) => {
   }
 };
 export const login = async (req, res) => {
-  try{
+  try {
     const { email, password } = req.body;
     const user = await User.findOne({ email }).select("+password");
 
