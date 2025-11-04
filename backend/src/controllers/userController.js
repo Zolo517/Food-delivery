@@ -18,9 +18,9 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select("+password");
 
-    if (!user.length) {
+    if (!user) {
       res.status(404).send({ message: "You have to sign up first" });
     }
 
