@@ -7,6 +7,7 @@ import {
   resetPasswordReq,
   signup,
 } from "../controllers/userController.js";
+import { verifytoken } from "../middleware/auth.js";
 
 export const UserRouter = Router();
 
@@ -15,4 +16,4 @@ UserRouter.post("/sign-up", signup)
   .post("/reset-password-request", resetPasswordReq)
   .post("/reset-password", resetPassword)
   .get("/refresh", getRefreshedData)
-  .get("/verify-reset-password-request", getVerifyResetPassReq);
+  .get("/verify-reset-password-request", verifytoken, getVerifyResetPassReq);
