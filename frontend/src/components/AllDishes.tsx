@@ -5,6 +5,8 @@ import { AllDishesCategory } from "./AllDishesCategory";
 import { Category } from "./Category";
 import useSWR from "swr";
 import axios from "axios";
+import { CategoryType } from "@/lib/types";
+import { fetcher } from "@/lib/utils";
 import { log } from "console";
 
 // const categories = [
@@ -21,25 +23,22 @@ import { log } from "console";
 // ];
 
 export const AllDishes = () => {
-  // const [categories, setCategories] = useState([]);
-  // useEffect(() => {
-  //   async () => {
-  //     const res = await axios.get("http://localhost:4000/category");
-  //     console.log(res.data);
-  //     console.log(res);
+  // const [categories, setCategories] = useState<CategoryType[]>([]);
 
-  //     setCategories(res.data);
-  //   };
-  // }, []);
+  //   useEffect(() => {
+  //     (async () => {
+  //       const res = await axios.get("https://localhost:4000/category");
+  //       setCategories(res.data);
+  //       console.log(categories);
+  //     })();
+  //   }, []);
+  // console.log(categories);
 
-  const getFoodCategories = async () => {
-    const res = await axios.get("http://localhost:4000/category");
-    return res.data;
-  };
+ 
 
   const { data, error, isLoading } = useSWR(
     "http://localhost:4000/category",
-    () => getFoodCategories()
+    fetcher
   );
 
   // console.log(categories);
@@ -47,9 +46,8 @@ export const AllDishes = () => {
     <div className="flex flex-col gap-6">
       <AllDishesCategory data={data} />
       {data &&
-        data?.map((c: any, i: Key | null | undefined) => {
-          // return <Category key={name} name={name} />;
-          return <div key={i}>{c.id}</div>;
+        data.map((c: CategoryType, i: number) => {
+          return <Category key={i} name={data} />;
         })}
     </div>
   );
