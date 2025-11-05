@@ -5,12 +5,18 @@ import { CategoryRouter } from "./routers/foodCategoryRoute.js";
 import { UserRouter } from "./routers/userRoute.js";
 import { FoodRouter } from "./routers/foodRoute.js";
 import { OrderRouter } from "./routers/foodOrderRoute.js";
+import cors from "cors";
 
 configDotenv();
 
 const port = process.env.PORT;
 const app = express();
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(json());
 
 app.use("/category", CategoryRouter);
