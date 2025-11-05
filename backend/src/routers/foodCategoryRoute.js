@@ -8,9 +8,7 @@ import {
 
 export const CategoryRouter = Router();
 
-CategoryRouter
-  .post("/", createFoodCategory)
+CategoryRouter.post("/", createFoodCategory)
   .get("/", getfoodCategories)
   .patch("/:id", updateCategoryName)
   .delete("/:id", deletefoodCategoryById);
-  

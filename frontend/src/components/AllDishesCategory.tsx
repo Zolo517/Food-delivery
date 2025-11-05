@@ -11,7 +11,7 @@ export const AllDishesCategory = ({data}:{data:any}) => {
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-3">
-          {data && data?.map((el) => {
+          {/* {data && data?.map((el) => {
             return (
               <Button
                 variant={"outline"}
@@ -22,7 +22,7 @@ export const AllDishesCategory = ({data}:{data:any}) => {
                 <Badge>111</Badge>
               </Button>
             );
-          })}
+          })} */}
           <Button className="rounded-full py-2 px-4 bg-[#0c4b78]">
             <Plus />
           </Button>
