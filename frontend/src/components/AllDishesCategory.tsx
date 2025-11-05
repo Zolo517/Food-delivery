@@ -1,22 +1,31 @@
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Plus } from "lucide-react";
 
-export const AllDishesCategory = () => {
+export const AllDishesCategory = ({data}:{data:any}) => {
   return (
     <Card className="flex flex-col gap-4 p-6">
-      <CardHeader>Dishes category</CardHeader>
+      <CardHeader className="text-xl font-semibold -tracking-[0.5px]">
+        Dishes category
+      </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-3">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => {
+          {data && data?.map((el) => {
             return (
-              <Button key={el}>
+              <Button
+                variant={"outline"}
+                className="rounded-full py-2 px-4"
+                key={el}
+              >
                 All Dishes
                 <Badge>111</Badge>
               </Button>
             );
           })}
-          <Button>+</Button>
+          <Button className="rounded-full py-2 px-4 bg-[#0c4b78]">
+            <Plus />
+          </Button>
         </div>
       </CardContent>
     </Card>

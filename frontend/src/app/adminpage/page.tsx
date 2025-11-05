@@ -3,7 +3,7 @@ import { FoodMenuSection } from "./feature/FoodMenuSection";
 
 export default function AdminPage() {
   return (
-    <div>
+    <div className="flex ">
       <AdminPageSideBar />
       <FoodMenuSection/>
     </div>

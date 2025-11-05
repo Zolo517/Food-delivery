@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
@@ -37,7 +38,9 @@ export const SignUpStepTwo = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
       </Button>
       <p className="text-[#71717A] text-base text-center">
         Already have an account?{" "}
-        <span className="text-[#2563EB] text-base">Log in</span>
+        <Link href={"/login"}>
+          <span className="text-[#2563EB] text-base">Log in</span>
+        </Link>
       </p>
     </form>
   );

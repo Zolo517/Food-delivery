@@ -14,30 +14,27 @@ import Link from "next/link";
 
 export const AdminPageSideBar = () => {
   return (
-    
-      <div className="py-9 px-5 flex flex-col w-[205px] bg-white">
-        <SidebarHeader>
-          <Logo />
-        </SidebarHeader>
-        <SidebarContent>
-          <SidebarGroupContent className="w-full flex flex-col gap-6 mt-10">
-            <Link
-              href={"/adminpage/"}
-              className="w-[165px] px-6 py-2 gap-2.5 rounded-3xl flex h-10"
-            >
-              <MenuLogoSvg />
-              <p className="text-sm font-medium">Food Menu</p>
-            </Link>
-            <Link
-              href={"/adminpage/orders"}
-              className="px-6 py-2 gap-2.5 rounded-3xl bg-black flex"
-            >
-              <OrderSvg />
-              <p className="text-sm font-medium text-white">Orders</p>
-            </Link>
-          </SidebarGroupContent>
-        </SidebarContent>
+    <div className="py-9 px-5 flex flex-col w-[205px] bg-white h-full">
+      <div>
+        <Logo />
       </div>
 
+      <div className="w-full flex flex-col gap-6 mt-10">
+        <Link
+          href={"/adminpage/"}
+          className="w-[165px] px-6 py-2 gap-2.5 rounded-3xl flex h-10"
+        >
+          <MenuLogoSvg />
+          <p className="text-sm font-medium">Food Menu</p>
+        </Link>
+        <Link
+          href={"/adminpage/orders"}
+          className="px-6 py-2 gap-2.5 rounded-3xl bg-black flex"
+        >
+          <OrderSvg />
+          <p className="text-sm font-medium text-white">Orders</p>
+        </Link>
+      </div>
+    </div>
   );
 };
