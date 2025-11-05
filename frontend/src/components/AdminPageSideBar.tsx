@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export const AdminPageSideBar = () => {
   return (
-    <div className="py-9 px-5 flex flex-col w-[205px] bg-white h-full">
+    <div className="py-9 px-5 flex flex-col w-[205px] bg-white h-full sticky top-0">
       <div>
         <Logo />
       </div>
