@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { AllDishesCategory } from "./AllDishesCategory";
 import { Category } from "./Category";
 import useSWR from "swr";
 import axios from "axios";
 import { CategoryType } from "@/lib/types";
 import { fetcher } from "@/lib/utils";
+import { log } from "console";
 
 // const categories = [
 //   "Appetizers",
@@ -40,6 +41,7 @@ export const AllDishes = () => {
     fetcher
   );
 
+  // console.log(categories);
   return (
     <div className="flex flex-col gap-6">
       <AllDishesCategory data={data} />
