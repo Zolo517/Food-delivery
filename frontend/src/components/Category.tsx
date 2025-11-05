@@ -9,8 +9,10 @@ type categoryType = {
 
 export const Category = ({ name }: categoryType) => {
   return (
-    <Card>
-      <CardHeader>{name}</CardHeader>
+    <Card className="p-5">
+      <CardHeader className="text-xl font-semibold -tracking-[0.5px]">
+        {name}
+      </CardHeader>
       <CardContent>
         <DishCard />
       </CardContent>

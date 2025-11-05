@@ -1,6 +1,6 @@
 import { FormSection } from "./Feature/FormSection";
 
-export default function LoginPage() {
+export default function SignupPage() {
   // const result = axios.post('https://localhost:4000/auth/login',{
   //   headers:{
   //     Authorization : ``
