@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { useState } from "react";
 
-export const SignUpStepOne = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
+export function SignUpStepOne({
+  letsgoBtn,
+  setEmail,
+}: {
+  letsgoBtn: () => void;
+  setEmail: () => void;
+}) {
   return (
     <form onSubmit={letsgoBtn} className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
@@ -15,6 +22,8 @@ export const SignUpStepOne = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
         </p>
       </div>
       <Input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email address"
         className="border-[#E4E4E7]-1 rounded-md"
       />
@@ -29,4 +38,4 @@ export const SignUpStepOne = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
       </p>
     </form>
   );
-};
+}

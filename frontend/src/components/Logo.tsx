@@ -1,8 +1,9 @@
 import CompanyLogoSvg from "@/Icons/CompanyLogoSvg";
+import Link from "next/link";
 
 export const Logo = () => {
   return (
-    <div className="flex gap-3 items-center">
+    <Link href={"/"} className="flex gap-3 items-center">
       <CompanyLogoSvg />
       <div>
         <h4 className="text-lg font-semibold">
@@ -10,6 +11,6 @@ export const Logo = () => {
         </h4>
         <p className="text-[#71717A] text-xs ">Swift delivery</p>
       </div>
-    </div>
+    </Link>
   );
 };
