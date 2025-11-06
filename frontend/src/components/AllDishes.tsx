@@ -3,7 +3,7 @@
 import { Key, useEffect, useState } from "react";
 import { AllDishesCategory } from "./AllDishesCategory";
 import { Category } from "./Category";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import axios from "axios";
 import { CategoryType } from "@/lib/types";
 import { fetcher } from "@/lib/utils";
@@ -31,23 +31,25 @@ export const AllDishes = () => {
   //       setCategories(res.data);
   //       console.log(categories);
   //     })();
-  //   }, []);
   // console.log(categories);
-
- 
 
   const { data, error, isLoading } = useSWR(
     "http://localhost:4000/category",
     fetcher
   );
 
+  const addFoodCategory = async (name: string) => {
+    const res = await axios.post("http://localhost:4000/category", name);
+    mutate("http://localhost:4000/category");
+  };
+
   // console.log(categories);
   return (
     <div className="flex flex-col gap-6">
-      <AllDishesCategory data={data} />
+      <AllDishesCategory data={data} addFoodCategory={addFoodCategory} />
       {data &&
         data.map((c: CategoryType, i: number) => {
-          return <Category key={i} name={data} />;
+          return <Category key={i} name={c} />;
         })}
     </div>
   );

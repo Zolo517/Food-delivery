@@ -18,23 +18,16 @@ import {
 import { Input } from "./ui/input";
 import axios from "axios";
 
-export const AllDishesCategory = ({ data }: { data: CategoryType[] }) => {
+type propsType = {
+  data: CategoryType[];
+  addFoodCategory: (name: string) => Promise<void>;
+};
+
+export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
   const [value, setValue] = useState("");
 
-  const poster = async (url: string) => {
-    const res = await axios.post(url, {
-      categoryName: value,
-    });
-    return res.data;
-  };
-
-  const addFoodCategory = () => {
-    const { data, error, isLoading } = useSWR(
-      "http://localhost:4000/category",
-      poster
-    );
-  };
-
+  console.log(value);
+  console.log();
   return (
     <Card className="flex flex-col gap-4 p-6">
       <CardHeader className="text-xl font-semibold -tracking-[0.5px]">
@@ -57,10 +50,7 @@ export const AllDishesCategory = ({ data }: { data: CategoryType[] }) => {
             })}
           <Dialog>
             <DialogTrigger>
-              <button
-                // onClick={addFoodCategory}
-                className="w-9 h-9 flex justify-center items-center rounded-full bg-[#0c4b78]"
-              >
+              <button className="w-9 h-9 flex justify-center items-center rounded-full bg-[#0c4b78]">
                 <Plus className="text-white " />
               </button>
             </DialogTrigger>
@@ -81,7 +71,7 @@ export const AllDishesCategory = ({ data }: { data: CategoryType[] }) => {
               </div>
               <div className="flex justify-end">
                 <button
-                  onClick={() => addFoodCategory()}
+                  onClick={() => addFoodCategory({ categoryName: value })}
                   className="w-[123px] py-2 px-3 bg-black rounded-md text-white "
                 >
                   Add category

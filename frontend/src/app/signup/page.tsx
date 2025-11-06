@@ -10,7 +10,7 @@ export default function SignupPage() {
   return (
     <div className="p-5 flex gap-12 ">
       <FormSection />
-      <div className="w-full bg-[#064357] "></div>
+      <div className="w-full bg-[#1d293d]  "></div>
     </div>
   );
 }

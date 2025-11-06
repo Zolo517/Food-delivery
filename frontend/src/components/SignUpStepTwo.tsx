@@ -4,9 +4,15 @@ import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 
-export const SignUpStepTwo = ({ letsgoBtn }: { letsgoBtn: () => void }) => {
+export const SignUpStepTwo = ({
+  letsgoBtn,
+  signup,
+}: {
+  letsgoBtn: () => void;
+ signup: (Signup: object) => Promise<void>;
+}) => {
   return (
-    <form className="flex flex-col gap-6">
+    <form onSubmit={signup} className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
         <h3 className="text-[#09090B] text-2xl font-semibold">
           {" "}
