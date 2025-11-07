@@ -21,14 +21,14 @@ export const AdminPageSideBar = () => {
 
       <div className="w-full flex flex-col gap-6 mt-10">
         <Link
-          href={"/adminpage/"}
+          href={"/admin/food"}
           className="w-[165px] px-6 py-2 gap-2.5 rounded-3xl flex h-10"
         >
           <MenuLogoSvg />
           <p className="text-sm font-medium">Food Menu</p>
         </Link>
         <Link
-          href={"/adminpage/orders"}
+          href={"/admin/orders"}
           className="px-6 py-2 gap-2.5 rounded-3xl bg-black flex"
         >
           <OrderSvg />

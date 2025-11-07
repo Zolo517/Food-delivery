@@ -1,16 +1,15 @@
 "use client";
 
-import { SignUpStepOne } from "@/components/SignUpStepOne";
-import { SignUpStepTwo } from "@/components/SignUpStepTwo";
+// import { SignUpStepOne } from "@/components/SignUpStepOne";
+import { SignUpStepTwo } from "@/app/(Client)/signup/_components/SignUpStepTwo";
 import { Button } from "@/components/ui/button";
 
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-
+import { fetcher } from "@/lib/utils";
 import axios from "axios";
 import useSWR, { mutate } from "swr";
-import { fetcher } from "@/lib/utils";
 
 export const FormSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +17,7 @@ export const FormSection = () => {
   const [pass, setPass] = useState("");
   console.log(email, "email");
 
-  const SignupSteps = [SignUpStepOne, SignUpStepTwo][currentIndex];
+  // const SignupSteps = [SignUpStepOne, SignUpStepTwo][currentIndex];
 
   const letsgoBtn = () => {
     setCurrentIndex(currentIndex + 1);
@@ -27,15 +26,15 @@ export const FormSection = () => {
     setCurrentIndex(currentIndex - 1);
   };
 
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:4000/auth/sign-up",
-    fetcher
-  );
+  // const { data, error, isLoading } = useSWR(
+  //   "http://localhost:4000/auth/sign-up",
+  //   fetcher
+  // );
 
-  const signup = async (Signup: object) => {
-    const res = await axios.post("http://localhost:4000/auth/sign-up", Signup);
-    mutate("http://localhost:4000/auth/sign-up");
-  };
+  // const signup = async (Signup: object) => {
+  //   const res = await axios.post("http://localhost:4000/auth/sign-up", Signup);
+  //   mutate("http://localhost:4000/auth/sign-up");
+  // };
   // const validation = (email)=>{
   // if(currentIndex===0){
   //   if(email){
@@ -52,12 +51,12 @@ export const FormSection = () => {
           <ArrowLeft />
         </Button>
       </Link>
-      <SignupSteps
+      {/* <SignupSteps
         setEmail={setEmail}
         setPass={setPass}
         signup={signup}
         letsgoBtn={letsgoBtn}
-      />
+      /> */}
     </div>
   );
 };

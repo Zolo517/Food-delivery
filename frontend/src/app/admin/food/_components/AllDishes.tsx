@@ -40,6 +40,7 @@ export const AllDishes = () => {
 
   const addFoodCategory = async (name: string) => {
     const res = await axios.post("http://localhost:4000/category", name);
+    console.log("category",res.data.message);
     mutate("http://localhost:4000/category");
   };
 
@@ -49,6 +50,9 @@ export const AllDishes = () => {
       <AllDishesCategory data={data} addFoodCategory={addFoodCategory} />
       {data &&
         data.map((c: CategoryType, i: number) => {
+          if (c.categoryName === "All dishes") {
+            return;
+          }
           return <Category key={i} name={c} />;
         })}
     </div>

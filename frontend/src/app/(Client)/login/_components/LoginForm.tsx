@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+import { Button } from "../../../../components/ui/button";
+import { Checkbox } from "../../../../components/ui/checkbox";
+import { Input } from "../../../../components/ui/input";
+import { Label } from "../../../../components/ui/label";
 import { useState } from "react";
 import { log } from "console";
 import useSWR from "swr";

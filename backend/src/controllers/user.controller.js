@@ -37,10 +37,11 @@ export const login = async (req, res) => {
     });
 
     if (!isCorrectPassword) {
-      res.status(403).send({ message: "Wrong password", data: user });
-      console.log(token, "wrong pass token");
+      res.status(403).send({ message: "Email or password is incorrect." });
     }
-    res.status(200).send({ message: "success", data: user, token: token });
+    res
+      .status(200)
+      .send({ message: "Successfully logged in", data: user, token: token });
     console.log(token, "success token");
   } catch (error) {
     console.error(error);
