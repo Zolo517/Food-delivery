@@ -8,8 +8,8 @@ export default function Home() {
     <div className="">
       <Navbar />
       <div className="flex gap-20 justify-center">
-        <Link className="font-bold text-xl" href={"/adminpage"}>
-          adminpage
+        <Link className="font-bold text-xl" href={"/admin"}>
+          admin
         </Link>
         <Link className="font-bold text-xl" href={"/login"}>
           login
