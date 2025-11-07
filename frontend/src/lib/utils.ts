@@ -6,12 +6,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// export const axiosInstance = axios.create({
-//   baseURL:"https://localhost:4000",
-//   headers: {
-//     Authorization:`Bearer `
-//   }
-// });
+export const axiosInstance = axios.create({
+  baseURL: "http://localhost:4000",
+});
 
 export const fetcher = async (url: string) => {
   const res = await axios.get(url);

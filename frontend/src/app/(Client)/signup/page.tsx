@@ -1,4 +1,4 @@
-import { FormSection } from "./Feature/FormSection";
+import { FormSection } from "./_feature/FormSection";
 
 export default function SignupPage() {
   // const result = axios.post('https://localhost:4000/auth/login',{
