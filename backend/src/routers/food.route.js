@@ -4,7 +4,7 @@ import {
   getFood,
   getFoodByCategoryId,
   updateFoodbyFoodId,
-} from "../controllers/foodController.js";
+} from "../controllers/food.controller.js";
 
 export const FoodRouter = Router();
 

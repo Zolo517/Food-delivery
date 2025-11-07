@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 
 export function SignUpStepOne({
   letsgoBtn,
   setEmail,
 }: {
   letsgoBtn: () => void;
-  setEmail: () => void;
+  setEmail: Dispatch<SetStateAction<string>>;
 }) {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>, target: any) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <form onSubmit={letsgoBtn} className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
@@ -22,8 +26,8 @@ export function SignUpStepOne({
         </p>
       </div>
       <Input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        // value={email}
+        onChange={() => handleOnChange}
         placeholder="Enter your email address"
         className="border-[#E4E4E7]-1 rounded-md"
       />

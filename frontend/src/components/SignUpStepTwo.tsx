@@ -3,13 +3,16 @@ import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
+import { Dispatch, SetStateAction } from "react";
 
 export const SignUpStepTwo = ({
   letsgoBtn,
   signup,
+  setPass,
 }: {
   letsgoBtn: () => void;
- signup: (Signup: object) => Promise<void>;
+  signup: (Signup: object) => Promise<void>;
+  setPass: Dispatch<SetStateAction<string>>;
 }) => {
   return (
     <form onSubmit={signup} className="flex flex-col gap-6">

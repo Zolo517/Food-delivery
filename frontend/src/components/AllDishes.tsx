@@ -6,8 +6,8 @@ import { Category } from "./Category";
 import useSWR, { mutate } from "swr";
 import axios from "axios";
 import { CategoryType } from "@/lib/types";
-import { fetcher } from "@/lib/utils";
 import { log } from "console";
+import { fetcher } from "@/lib/utils";
 
 // const categories = [
 //   "Appetizers",

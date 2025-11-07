@@ -6,7 +6,7 @@ import {
   resetPassword,
   resetPasswordReq,
   signup,
-} from "../controllers/userController.js";
+} from "../controllers/user.controller.js";
 import { verifytoken } from "../middleware/auth.js";
 
 export const UserRouter = Router();

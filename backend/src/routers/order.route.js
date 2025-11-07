@@ -4,7 +4,7 @@ import {
   getFoodOrder,
   getFoodOrderByUserId,
   updateFoodOrderByFoodOrderId,
-} from "../controllers/foodOrderController.js";
+} from "../controllers/order.controller.js";
 
 export const OrderRouter = Router();
 

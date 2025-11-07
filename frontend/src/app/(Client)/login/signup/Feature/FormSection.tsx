@@ -7,14 +7,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { fetcher } from "@/lib/utils";
+
 import axios from "axios";
 import useSWR, { mutate } from "swr";
+import { fetcher } from "@/lib/utils";
 
 export const FormSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  console.log(email, "email");
 
   const SignupSteps = [SignUpStepOne, SignUpStepTwo][currentIndex];
 

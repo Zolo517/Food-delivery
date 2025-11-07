@@ -1,10 +1,10 @@
 import { configDotenv } from "dotenv";
 import express, { json } from "express";
 import { connectDB } from "./database/db.js";
-import { CategoryRouter } from "./routers/foodCategoryRoute.js";
-import { UserRouter } from "./routers/userRoute.js";
-import { FoodRouter } from "./routers/foodRoute.js";
-import { OrderRouter } from "./routers/foodOrderRoute.js";
+import { CategoryRouter } from "./routers/category.route.js";
+import { UserRouter } from "./routers/user.route.js";
+import { FoodRouter } from "./routers/food.route.js";
+import { OrderRouter } from "./routers/order.route.js";
 import cors from "cors";
 
 configDotenv();
