@@ -16,7 +16,7 @@ export const AdminPageSideBar = () => {
   return (
     <div className="py-9 px-5 flex flex-col w-[205px] bg-white h-full sticky top-0">
       <div>
-        <Logo />
+        <Logo om={"black"} nom={"black"} swift={"#71717A"} />
       </div>
 
       <div className="w-full flex flex-col gap-6 mt-10">
