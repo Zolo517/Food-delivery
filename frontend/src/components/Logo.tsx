@@ -1,15 +1,26 @@
 import CompanyLogoSvg from "@/Icons/CompanyLogoSvg";
 import Link from "next/link";
 
-export const Logo = () => {
+type LogoProps = {
+  om: string;
+  nom: string;
+  swift: string;
+};
+
+export const Logo = ({ om, nom, swift }: LogoProps) => {
   return (
     <Link href={"/"} className="flex gap-3 items-center">
       <CompanyLogoSvg />
       <div>
-        <h4 className="text-lg font-semibold">
-          Om <span className="text-lg font-semibold">Nom</span>
+        <h4 className="text-lg font-semibold" style={{ color: om }}>
+          Om
+          <span className="text-lg font-semibold" style={{ color: nom }}>
+            Nom
+          </span>
         </h4>
-        <p className="text-[#71717A] text-xs ">Swift delivery</p>
+        <p className=" text-xs " style={{ color: swift }}>
+          Swift delivery
+        </p>
       </div>
     </Link>
   );

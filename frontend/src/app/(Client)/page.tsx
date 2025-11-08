@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full h-full bg-black">
       <Navbar />
       <div className="flex gap-20 justify-center">
         <Link className="font-bold text-xl" href={"/admin/food"}>

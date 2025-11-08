@@ -6,12 +6,13 @@ import {
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import { Logo } from "./Logo";
+import { Profile } from "./Profile";
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-between ">
-      <Logo />
-      <div>
+    <div className="flex justify-between py-16 px-22">
+      <Logo om={"white"} nom={"#EF4444"} swift={"#F4F4F5"} />
+      <div className="flex items-center">
         <div>
           <MapPin />
         </div>
@@ -20,12 +21,14 @@ export const Navbar = () => {
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <User />
+            <Profile />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <div className="">
-              <h3>hsdl</h3>
-              <Button>Sign out</Button>
+            <div className="flex flex-col items-center gap-2">
+              <h3>UserName</h3>
+              <Button className="rounded-full" variant={"secondary"}>
+                Sign out
+              </Button>
             </div>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -1,10 +1,11 @@
 "use client";
 
-import { ResetYourPass } from "@/components/ResetYourPass";
 import { Button } from "@/components/ui/button";
-import { VerifyEmail } from "@/components/VerifyEmail";
+
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { ResetYourPass } from "./_components/ResetYourPass";
+import { VerifyEmail } from "./_components/VerifyEmail";
 
 export default function Page() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,7 +22,7 @@ export default function Page() {
         <Button variant={"outline"} className="font-semibold w-fit">
           <ArrowLeft />
         </Button>
-        <ResetPassSteps nextPage={nextPage}/>
+        <ResetPassSteps nextPage={nextPage} />
       </div>
       <div className="w-full bg-[#064357] "></div>
     </div>
