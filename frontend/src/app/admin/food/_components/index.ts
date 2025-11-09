@@ -1,4 +1,4 @@
 export * from "./DishCard";
 export * from "./AllDishes";
 export * from "./AllDishesCategory";
-export * from "./Category";
+export * from "./AdminCategory";
