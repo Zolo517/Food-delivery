@@ -2,7 +2,7 @@
 
 import { Key, useEffect, useState } from "react";
 import { AllDishesCategory } from "./AllDishesCategory";
-import { Category } from "./Category";
+import { Category } from "./AdminCategory";
 import useSWR, { mutate } from "swr";
 import axios from "axios";
 import { CategoryType } from "@/lib/types";
@@ -40,7 +40,7 @@ export const AllDishes = () => {
 
   const addFoodCategory = async (name: string) => {
     const res = await axios.post("http://localhost:4000/category", name);
-    console.log("category",res.data.message);
+    console.log("category", res.data.message);
     mutate("http://localhost:4000/category");
   };
 
