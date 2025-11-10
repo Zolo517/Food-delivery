@@ -7,6 +7,7 @@ import { DishCard } from "./DishCard";
 import useSWR, { mutate } from "swr";
 import { AddDishCard } from "./AddDishCard";
 import { axiosInstance, fetcher } from "@/lib/utils";
+import { EditDishDialog } from "./EditDishDialog";
 
 export const Category = ({ name }: { name: CategoryType }) => {
   const { data, error, isLoading } = useSWR(
@@ -27,7 +28,22 @@ export const Category = ({ name }: { name: CategoryType }) => {
         <AddDishCard addDish={addDish} name={name.categoryName} />
         {data &&
           data?.map((dish: dishType, i: number) => {
-            return <DishCard key={i} dish={dish} />;
+            return (
+              <div key={i} className="relative">
+                <DishCard
+                  dish={dish}
+                  cardW={"270.75px"}
+                  cardH={"241px"}
+                  imgW={"238.75px"}
+                  imgH={"129px"}
+                  name={"14px"}
+                  weight={"medium"}
+                  price={"12px"}
+                  ingre={"12px"}
+                />
+                <EditDishDialog name={name} />
+              </div>
+            );
           })}
       </CardContent>
     </Card>

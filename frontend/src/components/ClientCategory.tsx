@@ -1,11 +1,16 @@
+"use client";
+
 import { DishCard } from "@/app/admin/food/_components";
 import { CategoryType, dishType } from "@/lib/types";
 import { fetcher } from "@/lib/utils";
 import useSWR from "swr";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Button } from "./ui/button";
+import { AddDishToCartDialog } from "@/components/AddDishToCartDialog";
 
 export const ClientCategory = ({ category }: { category: CategoryType }) => {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:4000/category",
+    "http://localhost:4000/food",
     fetcher
   );
 
@@ -17,8 +22,23 @@ export const ClientCategory = ({ category }: { category: CategoryType }) => {
       <div className="flex flex-wrap gap-9">
         {" "}
         {data &&
-          data?.map((dish: dishType, i: number) => {
-            return <DishCard key={i} dish={dish} />;
+          data?.splice(0, 8).map((dish: dishType, i: number) => {
+            return (
+              <div key={i} className="relative">
+                <DishCard
+                  dish={dish}
+                  cardW={"397.3px"}
+                  cardH={"342px"}
+                  imgW={"365.3px"}
+                  imgH={"210px"}
+                  name={"24px"}
+                  weight={"semibold"}
+                  price={"18px"}
+                  ingre={"14px"}
+                />
+                <AddDishToCartDialog dish={dish} />
+              </div>
+            );
           })}
       </div>
     </div>
