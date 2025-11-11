@@ -9,25 +9,16 @@ import { AddDishCard } from "./AddDishCard";
 import { axiosInstance, fetcher } from "@/lib/utils";
 import { EditDishDialog } from "./EditDishDialog";
 
-export const Category = ({ name }: { name: CategoryType }) => {
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:4000/food",
-    fetcher
-  );
-  const addDish = async (dish: object) => {
-    await axiosInstance.post("/food", dish);
-    mutate("http://localhost:4000/food");
-  };
-
+export const   AdminCategory = ({ name }: { name: any }) => {
   return (
     <Card className="p-5">
       <CardHeader className="text-xl font-semibold -tracking-[0.5px]">
         {name.categoryName}
       </CardHeader>
       <CardContent className="flex flex-wrap gap-5">
-        <AddDishCard addDish={addDish} name={name.categoryName} />
-        {data &&
-          data?.map((dish: dishType, i: number) => {
+        <AddDishCard name={name.categoryName} />
+        {name.foods &&
+          name.foods?.map((dish: dishType, i: number) => {
             return (
               <div key={i} className="relative">
                 <DishCard

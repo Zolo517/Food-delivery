@@ -15,7 +15,7 @@ export const AddDishCard = ({
   addDish,
 }: {
   name: string;
-  addDish: (dish: object) => Promise<void>;
+  addDish?: (dish: object) => Promise<void>;
 }) => {
   return (
     <Card className="border-dashed border border-[#731616] w-[270.75px] h-[241px] flex flex-col justify-center ">

@@ -1,3 +1,4 @@
+import { LabelAndInput } from "@/components/LabelAndInput";
 import {
   Dialog,
   DialogTrigger,
@@ -12,7 +13,7 @@ export const DishDialog = ({
   addDish,
 }: {
   name: string;
-  addDish: (dish: object) => Promise<void>;
+  addDish?: (dish: object) => Promise<void>;
 }) => {
   return (
     <Dialog>
@@ -27,51 +28,36 @@ export const DishDialog = ({
         </DialogTitle>
         <div className="flex flex-col gap-6 mt-6 mb-12">
           <div className="flex gap-6">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="name">Food name</Label>
-              <Input
-                id="name"
-                // value={value}
-                // onChange={(e) => setValue(e.target.value)}
-                placeholder="Type food name"
-                className="border-[#E4E4E7]-1 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="price">Food price</Label>
-              <Input
-                id="price"
-                // value={value}
-                // onChange={(e) => setValue(e.target.value)}
-                placeholder="Enter price..."
-                className="border-[#E4E4E7]-1 rounded-md"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="ingredients">Ingredients</Label>
-            <Input
-              id="ingredients"
-              // value={value}
-              // onChange={(e) => setValue(e.target.value)}
-              placeholder="List ingredients..."
-              className="border-[#E4E4E7]-1 rounded-md h-[90px]"
+            <LabelAndInput
+              gap="gap"
+              label="Food name"
+              id="name"
+              place="Type food name"
+            />
+            <LabelAndInput
+              gap="gap"
+              label="Food price"
+              id="price"
+              place="Enter price..."
             />
           </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="image">Food image</Label>
-            <Input
-              id="image"
-              // value={value}
-              // onChange={(e) => setValue(e.target.value)}
-              type="file"
-              className="border-[#E4E4E7]-1 rounded-md h-[138px]"
-            />
-          </div>
+          <LabelAndInput
+            gap="gap"
+            label="Ingredients"
+            id="ingre"
+            place="List ingredients..."
+          />
+          <LabelAndInput
+            gap="gap"
+            label="Food image"
+            h="138px"
+            id="img"
+            type="file"
+          />
         </div>
         <div className="flex justify-end">
           <button
-            onClick={() => addDish({})}
+            // onClick={() => addDish({})}
             className="w-[123px] py-2 px-4 bg-black rounded-md text-white "
           >
             Add Dish

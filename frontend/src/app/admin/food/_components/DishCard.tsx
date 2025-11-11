@@ -43,7 +43,7 @@ export const DishCard = ({
               {dish.name}
             </h4>
             <p className={`font-${weight} `} style={{ fontSize: price }}>
-              {dish.price}
+              {dish.price}₮
             </p>
           </div>
           <p style={{fontSize:ingre}}>{dish.ingredients}</p>

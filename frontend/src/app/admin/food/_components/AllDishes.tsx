@@ -2,12 +2,13 @@
 
 import { Key, useEffect, useState } from "react";
 import { AllDishesCategory } from "./AllDishesCategory";
-import { Category } from "./AdminCategory";
+
 import useSWR, { mutate } from "swr";
 import axios from "axios";
 import { CategoryType } from "@/lib/types";
 import { log } from "console";
 import { fetcher } from "@/lib/utils";
+import { AdminCategory } from "./AdminCategory";
 
 // const categories = [
 //   "Appetizers",
@@ -53,7 +54,7 @@ export const AllDishes = () => {
           if (c.categoryName === "All dishes") {
             return;
           }
-          return <Category key={i} name={c} />;
+          return <AdminCategory key={i} name={c} />;
         })}
     </div>
   );

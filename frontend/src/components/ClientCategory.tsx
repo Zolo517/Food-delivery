@@ -9,11 +9,6 @@ import { Button } from "./ui/button";
 import { AddDishToCartDialog } from "@/components/AddDishToCartDialog";
 
 export const ClientCategory = ({ category }: { category: CategoryType }) => {
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:4000/food",
-    fetcher
-  );
-
   return (
     <div className="flex flex-col gap-[54px]">
       <p className="text-3xl font-semibold text-white">
@@ -21,8 +16,8 @@ export const ClientCategory = ({ category }: { category: CategoryType }) => {
       </p>
       <div className="flex flex-wrap gap-9">
         {" "}
-        {data &&
-          data?.splice(0, 8).map((dish: dishType, i: number) => {
+        {category.foods &&
+          category.foods?.map((dish: dishType, i: number) => {
             return (
               <div key={i} className="relative">
                 <DishCard

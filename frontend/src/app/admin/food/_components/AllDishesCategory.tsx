@@ -33,15 +33,15 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
       <CardContent>
         <div className="flex flex-wrap gap-3">
           {data &&
-            data?.map((el, i) => {
+            data?.map(({ categoryName, foods }, i: number) => {
               return (
                 <Button
                   variant={"outline"}
                   className="rounded-full py-2 px-4"
                   key={i}
                 >
-                  {el.categoryName}
-                  <Badge>7</Badge>
+                  {categoryName}
+                  <Badge>{foods.length}</Badge>
                 </Button>
               );
             })}

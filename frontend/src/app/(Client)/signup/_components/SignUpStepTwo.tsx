@@ -1,18 +1,18 @@
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { Button } from "../../../../components/ui/button";
-import { Checkbox } from "../../../../components/ui/checkbox";
-import { Input } from "../../../../components/ui/input";
-import { Label } from "../../../../components/ui/label";
 import { Dispatch, SetStateAction } from "react";
 
 export const SignUpStepTwo = ({
   letsgoBtn,
   signup,
-  setPass,
+  // setPass,
 }: {
-  letsgoBtn: () => void;
+  letsgoBtn?: () => void;
   signup: (Signup: object) => Promise<void>;
-  setPass: Dispatch<SetStateAction<string>>;
+  // setPass: Dispatch<SetStateAction<string>>;
 }) => {
   return (
     <form onSubmit={signup} className="flex flex-col gap-6">
