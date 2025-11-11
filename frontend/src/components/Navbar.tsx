@@ -1,4 +1,6 @@
-import { MapPin, ShoppingCart, User } from "lucide-react";
+"use client";
+
+import { MapPin, Moon, ShoppingCart, Sun, User } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,10 +25,10 @@ export const Navbar = () => {
           <DropdownMenuTrigger>
             <Profile />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="mt-2">
+          <DropdownMenuContent className="mt-2 p-4">
             <div className="flex flex-col items-center gap-2">
-              <h3>UserName</h3>
-              <Button className="rounded-full" variant={"secondary"}>
+              <h3 className="text-xl font-semibold">UserName</h3>
+              <Button className="rounded-full py-2 px-3" variant={"secondary"}>
                 Sign out
               </Button>
             </div>

@@ -34,7 +34,7 @@ export const AddressDialog = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogTitle>Please write your delivery address!</DialogTitle>
-        <form onSubmit={()=>{setAddress("")}}>
+        <form className="flex flex-col gap-12" onSubmit={() => setAddress("")}>
           <Textarea
             value={address}
             onChange={(e) => setAddress(e.target.value)}

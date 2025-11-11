@@ -5,7 +5,6 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
-import { Category, DishCard } from "../admin/food/_components";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils";
 import { CategoryType, dishType } from "@/lib/types";
@@ -34,6 +33,9 @@ export default function Home() {
       <div className="w-full h-fit bg-[#404040] p-22 flex flex-col gap-[54px]">
         {data &&
           data.map((category: CategoryType, i: number) => {
+            if (category.categoryName === "All dishes") {
+              return;
+            }
             return <ClientCategory category={category} key={i} />;
           })}
       </div>

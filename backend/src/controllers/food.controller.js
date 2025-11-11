@@ -1,13 +1,14 @@
 import { Food } from "../models/food.model.js";
 
 export const createFood = async (req, res) => {
-  const { name, price, image, ingredients } = req.body;
+  const { name, price, image, ingredients, category } = req.body;
   try {
     const data = await Food.create({
       name,
       price,
       image,
       ingredients,
+      category,
     });
     res.send(data);
   } catch (error) {

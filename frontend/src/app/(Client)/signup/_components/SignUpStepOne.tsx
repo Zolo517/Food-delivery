@@ -5,18 +5,18 @@ import Link from "next/link";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 
 export function SignUpStepOne({
-  letsgoBtn,
-  setEmail,
+  nextBtn,
+  
 }: {
-  letsgoBtn: () => void;
-  setEmail: Dispatch<SetStateAction<string>>;
+  nextBtn?: () => void;
+  
 }) {
-  const handleOnChange = (e: ChangeEvent<HTMLInputElement>, target: any) => {
-    setEmail(e.target.value);
-  };
+  // const handleOnChange = (e: ChangeEvent<HTMLInputElement>, target: any) => {
+  //   setEmail(e.target.value);
+  // };
 
   return (
-    <form onSubmit={letsgoBtn} className="flex flex-col gap-6">
+    <form onSubmit={nextBtn} className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
         <h3 className="text-[#09090B] text-2xl font-semibold">
           {" "}
@@ -28,7 +28,7 @@ export function SignUpStepOne({
       </div>
       <Input
         // value={email}
-        onChange={() => handleOnChange}
+        // onChange={() => handleOnChange}
         placeholder="Enter your email address"
         className="border-[#E4E4E7]-1 rounded-md"
       />
