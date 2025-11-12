@@ -10,6 +10,13 @@ type Props = {
   type?: string;
   gap?: string;
   id: string;
+  value?: string;
+  onChange?: (e: {
+    target: {
+      name: any;
+      value: any;
+    };
+  }) => void;
 };
 
 export const LabelAndInput = ({
@@ -21,6 +28,8 @@ export const LabelAndInput = ({
   type,
   gap,
   id,
+  value,
+  onChange,
 }: Props) => {
   if (text === "text") {
     return (
@@ -30,44 +39,25 @@ export const LabelAndInput = ({
           name={id}
           id={id}
           placeholder={place}
+          value={value}
+          onChange={onChange}
           style={{ width: w, height: h }}
         />
-      </div>
-    );
-  } else if (gap === "gap") {
-    return (
-      <div className="flex flex-col gap-2">
-        <Label htmlFor={id}>{label}</Label>
-        {id === "ingre" ? (
-          <Textarea
-            id={id}
-            placeholder={place}
-            style={{ width: w, height: h }}
-            name={id}
-          />
-        ) : (
-          <Input
-            id={id}
-            type={type}
-            name={id}
-            // value={value}
-            // onChange={(e) => setValue(e.target.value)}
-            placeholder={place}
-            className="border-[#E4E4E7]-1 rounded-md"
-            style={{ height: h }}
-          />
-        )}
       </div>
     );
   }
 
   return (
-    <div className="flex justify-between">
+    <div
+      className={`flex ${gap === "gap" ? "flex-col gap-2" : "justify-between"}`}
+    >
       <Label htmlFor={id}>{label}</Label>
       <Input
         name={id}
         type={type}
         placeholder={place}
+        value={value}
+        onChange={onChange}
         style={{ width: w, height: h }}
         id={id}
       />

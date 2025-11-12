@@ -12,3 +12,8 @@ export type dishType = {
   image: string;
   ingredients: string;
 };
+
+export type LoggedUser = {
+  email:string
+  image:string
+}

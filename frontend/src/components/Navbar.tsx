@@ -1,40 +1,29 @@
 "use client";
 
-import { MapPin, Moon, ShoppingCart, Sun, User } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
 import { Logo } from "./Logo";
 import { Profile } from "./Profile";
-import { MapPinSvg } from "@/Icons/MapPinSvg";
 import { ShoppingCartSvg } from "@/Icons/ShoppingCartSvg";
-import { ArrowRightSvg } from "@/Icons/ArrowRightSvg";
 import { AddressDialog } from "./AddressDialog";
+import { UserContext } from "@/contexts/UserContext";
+import { LoggedUser } from "@/lib/types";
+import { createContext } from "react";
 
 export const Navbar = () => {
+  // const user = {
+  //   email: "Zoloo",
+  //   image:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiL1zL2R1W0aBbP-WvL6Tiv6KH660Weoh_ug&s",
+  // };
   return (
-    <div className="flex justify-between py-16 px-22">
-      <Logo om={"white"} nom={"#EF4444"} swift={"#F4F4F5"} />
-      <div className="flex items-center gap-[12.81px]">
-        <AddressDialog />
-        <ShoppingCartSvg />
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Profile />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mt-2 p-4">
-            <div className="flex flex-col items-center gap-2">
-              <h3 className="text-xl font-semibold">UserName</h3>
-              <Button className="rounded-full py-2 px-3" variant={"secondary"}>
-                Sign out
-              </Button>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    // <UserContext value={user}>
+      <div className="flex justify-between py-16 px-22">
+        <Logo om={"white"} nom={"#EF4444"} swift={"#F4F4F5"} />
+        <div className="flex items-center gap-[12.81px]">
+          <AddressDialog />
+          <ShoppingCartSvg />
+          <Profile />
+        </div>
       </div>
-    </div>
+    // </UserContext>
   );
 };
