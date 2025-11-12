@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { CategoryType } from "@/lib/types";
-import { Plus } from "lucide-react";
+import { CircleX, Plus } from "lucide-react";
 import { useState } from "react";
 
 type propsType = {
@@ -37,9 +37,10 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
               return (
                 <Button
                   variant={"outline"}
-                  className="rounded-full py-2 px-4"
+                  className="rounded-full py-2 px-4 relative"
                   key={i}
                 >
+                  <CircleX className="w-3 hover: absolute bottom-6 right-0" />
                   {categoryName}
                   <Badge>{foods.length}</Badge>
                 </Button>

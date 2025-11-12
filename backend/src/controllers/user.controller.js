@@ -65,6 +65,25 @@ export const resetPassword = async (req, res) => {
 };
 export const getRefreshedData = async (req, res) => {
   try {
+    const data = await User.aggregate([
+      {
+        $lookup:
+          /**
+           * from: The target collection.
+           * localField: The local join field.
+           * foreignField: The target join field.
+           * as: The name for the results.
+           * pipeline: Optional pipeline to run on the foreign collection.
+           * let: Optional variables to use in the pipeline field stages.
+           */
+          {
+            from: "foods",
+            localField: "_id",
+            foreignField: "category",
+            as: "foods",
+          },
+      },
+    ]);
   } catch (error) {
     console.error(error, "error");
   }
