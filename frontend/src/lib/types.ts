@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export type CategoryType = {
+  _id: string;
   categoryName: string;
   foods: dishType[];
 };
@@ -14,6 +15,6 @@ export type dishType = {
 };
 
 export type LoggedUser = {
-  email:string
-  image:string
-}
+  email: string;
+  image: string;
+};

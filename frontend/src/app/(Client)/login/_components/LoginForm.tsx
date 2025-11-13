@@ -1,33 +1,44 @@
-"use client";
+// "use client";
+"use server";
 
 import Link from "next/link";
 import { Button } from "../../../../components/ui/button";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
-import { useState } from "react";
-import { log } from "console";
-import useSWR from "swr";
-import { fetcher } from "@/lib/utils";
 
-export const LoginForm = ({
+import { log } from "console";
+
+import { fetcher } from "@/lib/utils";
+import { cookies } from "next/headers";
+
+export const LoginForm = async ({
   signin,
 }: {
-  signin: (userInfo: object) => Promise<void>;
+  signin?: (userInfo: object) => Promise<void>;
 }) => {
-  const [emailValue, setEmailValue] = useState("");
-  const [passValue, setPassValue] = useState("");
+  // const cookieStore = await cookies();
 
-  const { data, error, isLoading } = useSWR("", fetcher);
+  // // cookieStore.set("token", "authToken");
+
+  // cookieStore.set({
+  //   name: "token",
+  //   value: "authToken",
+  // });
+
+  // const [emailValue, setEmailValue] = useState("");
+  // const [passValue, setPassValue] = useState("");
+
+  // const { data, error, isLoading } = useSWR("", fetcher);
 
   // console.log(emailValueHandler);
 
-  console.log(emailValue);
-  console.log(passValue);
+  // console.log(emailValue);
+  // console.log(passValue);
 
   return (
     <form
-      onSubmit={() => signin({ email: emailValue, password: passValue })}
+      // onSubmit={() => signin({ email: emailValue, password: passValue })}
       className="flex flex-col gap-6"
     >
       <div className="flex flex-col gap-1">
@@ -38,14 +49,14 @@ export const LoginForm = ({
       </div>
       <div className="flex flex-col gap-4">
         <Input
-          value={emailValue}
-          onChange={(e) => setEmailValue(e.target.value)}
+          // value={emailValue}
+          // onChange={(e) => setEmailValue(e.target.value)}
           placeholder="Enter your email address"
           className="border-[#E4E4E7]-1 rounded-md"
         />
         <Input
-          value={passValue}
-          onChange={(e) => setPassValue(e.target.value)}
+          // value={passValue}
+          // onChange={(e) => setPassValue(e.target.value)}
           type="password"
           placeholder="Password"
           className="border-[#E4E4E7]-1 rounded-md"
@@ -65,6 +76,7 @@ export const LoginForm = ({
         <Link href={"/signup"}>
           <span className="text-[#2563EB] text-base">Sign Up</span>
         </Link>
+        {/* <p>{cookieStore?.value}</p> */}
       </p>
     </form>
   );

@@ -42,6 +42,7 @@ export const LabelAndInput = ({
           value={value}
           onChange={onChange}
           style={{ width: w, height: h }}
+          defaultValue={id}
         />
       </div>
     );
@@ -60,6 +61,7 @@ export const LabelAndInput = ({
         onChange={onChange}
         style={{ width: w, height: h }}
         id={id}
+        defaultValue={id}
       />
     </div>
   );

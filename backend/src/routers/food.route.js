@@ -10,7 +10,7 @@ import {
 export const FoodRouter = Router();
 
 FoodRouter.post("/", createFood)
-  .get("/:categoryId", getFoodByCategoryId)
+  .get("/:category", getFoodByCategoryId)
   .get("/", getFood)
-  .patch("/:foodId", updateFoodbyFoodId)
-  .delete("/:foodId", deleteFoodByFoodId);
+  .patch("/:id", updateFoodbyFoodId)
+  .delete("/:id", deleteFoodByFoodId);

@@ -12,8 +12,10 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { CategoryType } from "@/lib/types";
+import axios from "axios";
 import { CircleX, Plus } from "lucide-react";
 import { useState } from "react";
+import { mutate } from "swr";
 
 type propsType = {
   data: CategoryType[];
@@ -25,6 +27,12 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
 
   console.log(value);
   console.log();
+
+  const deleteCategory = async (id: string) => {
+    const res = await axios.delete(`http://localhost:4000/category/${id}`);
+    console.log("categoryname", res.data.message);
+    mutate("http://localhost:4000/food");
+  };
   return (
     <Card className="flex flex-col gap-4 p-6">
       <CardHeader className="text-xl font-semibold -tracking-[0.5px]">
@@ -33,14 +41,18 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
       <CardContent>
         <div className="flex flex-wrap gap-3">
           {data &&
-            data?.map(({ categoryName, foods }, i: number) => {
+            data?.map(({ _id, categoryName, foods }, i: number) => {
               return (
                 <Button
                   variant={"outline"}
                   className="rounded-full py-2 px-4 relative"
                   key={i}
                 >
-                  <CircleX className="w-3 hover: absolute bottom-6 right-0" />
+                  <CircleX
+                    // onClick={deleteCategory(_id)}
+                    className="w-3 hover: absolute bottom-6 right-0 hover:scale-50"
+                  />
+
                   {categoryName}
                   <Badge>{foods.length}</Badge>
                 </Button>

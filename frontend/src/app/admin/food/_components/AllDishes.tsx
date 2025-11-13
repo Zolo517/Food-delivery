@@ -51,9 +51,6 @@ export const AllDishes = () => {
       <AllDishesCategory data={data} addFoodCategory={addFoodCategory} />
       {data &&
         data.map((c: CategoryType, i: number) => {
-          if (c.categoryName === "All dishes") {
-            return;
-          }
           return <AdminCategory key={i} name={c} />;
         })}
     </div>

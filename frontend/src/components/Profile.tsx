@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const Profile = () => {
   const user = useContext(UserContext);
@@ -23,9 +24,11 @@ export const Profile = () => {
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-xl font-semibold">{user.email}</h3>
           {user.email === "Guest" ? (
-            <Button className="rounded-full py-2 px-3" variant={"secondary"}>
-              Log in
-            </Button>
+            <Link href={"/login"}>
+              <Button className="rounded-full py-2 px-3" variant={"secondary"}>
+                Log in
+              </Button>
+            </Link>
           ) : (
             <Button className="rounded-full py-2 px-3" variant={"secondary"}>
               Sign out

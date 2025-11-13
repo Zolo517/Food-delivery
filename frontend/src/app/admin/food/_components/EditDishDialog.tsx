@@ -22,6 +22,7 @@ import { LabelAndInput } from "@/components/LabelAndInput";
 import { TrashSvg } from "@/Icons/TrashSvg";
 
 export const EditDishDialog = ({ name }: { name: CategoryType }) => {
+  console.log(name, "name");
   return (
     <Dialog>
       <DialogTrigger>
@@ -42,13 +43,7 @@ export const EditDishDialog = ({ name }: { name: CategoryType }) => {
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
             <SelectContent>
-              {/* {name.map((n) => {               
-                return (
-                  <SelectItem key={n.categoryName} value="">
-                    {n.categoryName}
-                  </SelectItem>
-                );
-              })} */}
+            
             </SelectContent>
           </Select>
         </div>
@@ -57,7 +52,7 @@ export const EditDishDialog = ({ name }: { name: CategoryType }) => {
         <LabelAndInput label="Price" w="288px" id="price" />
 
         <LabelAndInput
-          type="file"
+          // type="file"
           label="Image"
           w={"288px"}
           h="116px"

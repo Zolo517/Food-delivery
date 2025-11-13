@@ -1,12 +1,14 @@
 import { Food } from "../models/food.model.js";
 
 export const createFood = async (req, res) => {
-  const { name, price, image, ingredients, category } = req.body;
+  const { name, price, img, ingredients, category } = req.body;
+
+  console.log("request body", req.body);
   try {
     const data = await Food.create({
       name,
       price,
-      image,
+      img,
       ingredients,
       category,
     });
@@ -45,7 +47,7 @@ export const updateFoodbyFoodId = async (req, res) => {
 export const deleteFoodByFoodId = async (req, res) => {
   const { id } = req.params;
   try {
-    await Food.findByIdAndDelete();
+    await Food.findByIdAndDelete(id);
   } catch (error) {
     console.error("error", error);
   }
