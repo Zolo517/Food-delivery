@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { Button } from "@/components/ui/button";
 import { fetcher } from "@/lib/utils";
@@ -9,19 +9,19 @@ import useSWR, { mutate } from "swr";
 import { LoginForm } from "./_components/LoginForm";
 
 export default function Page() {
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:4000/auth/sign-in",
-    fetcher
-  );
+  // const { data, error, isLoading } = useSWR(
+  //   "http://localhost:4000/auth/sign-in",
+  //   fetcher
+  // );
 
-  const signin = async (userInfo: object) => {
-    const res = await axios.post(
-      "http://localhost:4000/auth/sign-in",
-      userInfo
-    );
-    console.log(res.data.message);
-    mutate("http://localhost:4000/auth/sign-in");
-  };
+  // const signin = async (userInfo: object) => {
+  //   const res = await axios.post(
+  //     "http://localhost:4000/auth/sign-in",
+  //     userInfo
+  //   );
+  //   console.log(res.data.message);
+  //   mutate("http://localhost:4000/auth/sign-in");
+  // };
 
   return (
     <div className="p-5 flex gap-12 ">
@@ -31,7 +31,7 @@ export default function Page() {
             <ArrowLeft />
           </Button>
         </Link>
-        <LoginForm signin={signin} />
+        <LoginForm  />
       </div>
       <div className="w-full bg-[#1d293d] "></div>
     </div>

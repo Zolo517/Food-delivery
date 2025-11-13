@@ -57,7 +57,7 @@ export const EditDishDialog = ({ name }: { name: CategoryType }) => {
         <LabelAndInput label="Price" w="288px" id="price" />
 
         <LabelAndInput
-          type="file"
+          // type="file"
           label="Image"
           w={"288px"}
           h="116px"
