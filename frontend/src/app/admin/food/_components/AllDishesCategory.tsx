@@ -49,7 +49,7 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
                   key={i}
                 >
                   <CircleX
-                    onClick={deleteCategory(_id)}
+                    // onClick={deleteCategory(_id)}
                     className="w-3 hover: absolute bottom-6 right-0 hover:scale-50"
                   />
 
