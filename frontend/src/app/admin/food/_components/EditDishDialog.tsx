@@ -25,7 +25,7 @@ export const EditDishDialog = ({ name }: { name: CategoryType }) => {
   console.log(name, "name");
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button
           variant={"secondary"}
           className="absolute bg-white w-11 h-11 rounded-full top-[83px] left-[194px]"

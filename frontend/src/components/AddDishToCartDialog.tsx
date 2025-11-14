@@ -24,7 +24,7 @@ export const AddDishToCartDialog = ({ dish }: { dish: dishType }) => {
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button
           variant={"secondary"}
           className="bg-white rounded-full w-11 h-11 absolute top-[168px] left-[323px]"
