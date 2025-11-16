@@ -7,6 +7,37 @@ import { AddressDialog } from "./AddressDialog";
 import { UserContext } from "@/contexts/UserContext";
 import { LoggedUser } from "@/lib/types";
 import { createContext } from "react";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+} from "./ui/sidebar";
+
+import { Button } from "./ui/button";
+import { Card, CardContent, CardTitle } from "./ui/card";
+import { Separator } from "./ui/separator";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTrigger,
+} from "./ui/alert-dialog";
+import {
+  AlertDialogDescription,
+  AlertDialogTitle,
+} from "@radix-ui/react-alert-dialog";
+import { OrdersSideBar } from "./OrdersSideBar";
 
 export const Navbar = () => {
   // const user = {
@@ -16,14 +47,14 @@ export const Navbar = () => {
   // };
   return (
     // <UserContext value={user}>
-      <div className="flex justify-between py-16 px-22">
-        <Logo om={"white"} nom={"#EF4444"} swift={"#F4F4F5"} />
-        <div className="flex items-center gap-[12.81px]">
-          <AddressDialog />
-          <ShoppingCartSvg />
-          <Profile />
-        </div>
+    <div className="flex justify-between py-16 px-22">
+      <Logo om={"white"} nom={"#EF4444"} swift={"#F4F4F5"} />
+      <div className="flex items-center gap-[12.81px]">
+        <AddressDialog />
+        <OrdersSideBar />
+        <Profile />
       </div>
+    </div>
     // </UserContext>
   );
 };

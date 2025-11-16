@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="w-full h-full bg-black">
       <Navbar />
-      <div className="w-full h-142.5 bg-[#D8BFD8] flex gap-20 justify-center">
+      <div className="w-full h-142.5 bg-[url(/offer.png)] bg-cover flex gap-20 justify-center">
         <Link className="font-bold text-xl" href={"/admin/food"}>
           admin
         </Link>
