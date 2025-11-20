@@ -11,6 +11,7 @@ type Props = {
   gap?: string;
   id: string;
   value?: string;
+  defaultValue?: string;
   onChange?: (e: {
     target: {
       name: any;
@@ -29,6 +30,7 @@ export const LabelAndInput = ({
   gap,
   id,
   value,
+  defaultValue,
   onChange,
 }: Props) => {
   if (text === "text") {
@@ -42,7 +44,7 @@ export const LabelAndInput = ({
           value={value}
           onChange={onChange}
           style={{ width: w, height: h }}
-          defaultValue={id}
+          defaultValue={defaultValue}
         />
       </div>
     );
@@ -61,7 +63,7 @@ export const LabelAndInput = ({
         onChange={onChange}
         style={{ width: w, height: h }}
         id={id}
-        defaultValue={id}
+        defaultValue={defaultValue}
       />
     </div>
   );
