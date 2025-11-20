@@ -29,7 +29,7 @@ export const AddDishToCartDialog = ({ dish }: { dish: dishType }) => {
           variant={"secondary"}
           className="bg-white rounded-full w-11 h-11 absolute top-[168px] left-[323px]"
         >
-          <PlusSvg />
+          <PlusSvg color="black" />
         </Button>
       </DialogTrigger>
       <DialogContent className="flex gap-6 max-w-[826px]! w-200!">
@@ -47,7 +47,9 @@ export const AddDishToCartDialog = ({ dish }: { dish: dishType }) => {
             <div className="flex justify-between">
               <div>
                 <p className="text-base">Total price</p>
-                <p className="text-2xl font-semibold">{dish.price * index}₮</p>
+                <p className="text-2xl font-semibold">
+                  {Number(dish.price) * index}₮
+                </p>
               </div>
               <div className="flex gap-3 items-center">
                 <Button

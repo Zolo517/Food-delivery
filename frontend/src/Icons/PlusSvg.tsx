@@ -1,4 +1,4 @@
-export const PlusSvg = () => {
+export const PlusSvg = ({ color }: { color: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ export const PlusSvg = () => {
     >
       <path
         d="M8.00065 3.3335V12.6668M3.33398 8.00016H12.6673"
-        stroke="black"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

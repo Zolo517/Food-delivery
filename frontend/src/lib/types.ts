@@ -7,10 +7,11 @@ export type CategoryType = {
 };
 
 export type dishType = {
+  _id: string;
   length: ReactNode;
   name: string;
-  price: number;
-  image: string;
+  price: string;
+  img: string;
   ingredients: string;
 };
 

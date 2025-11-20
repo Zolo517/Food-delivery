@@ -10,6 +10,8 @@ import { axiosInstance, fetcher } from "@/lib/utils";
 import { EditDishDialog } from "./EditDishDialog";
 
 export const AdminCategory = ({ name }: { name: any }) => {
+  const { foods } = name;
+
   console.log(name._id, "category id");
   console.log(name.categoryName, "category name");
   return (
@@ -19,8 +21,8 @@ export const AdminCategory = ({ name }: { name: any }) => {
       </CardHeader>
       <CardContent className="flex flex-wrap gap-5">
         <AddDishCard name={name.categoryName} id={name._id} />
-        {name.foods &&
-          name.foods?.map((dish: dishType, i: number) => {
+        {foods &&
+          foods?.map((dish: dishType, i: number) => {
             return (
               <div key={i} className="relative">
                 <DishCard
@@ -34,7 +36,7 @@ export const AdminCategory = ({ name }: { name: any }) => {
                   price={"12px"}
                   ingre={"12px"}
                 />
-                <EditDishDialog name={name} />
+                <EditDishDialog dish={dish} />
               </div>
             );
           })}

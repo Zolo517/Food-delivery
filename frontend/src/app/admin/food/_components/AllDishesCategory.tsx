@@ -59,7 +59,7 @@ export const AllDishesCategory = ({ data, addFoodCategory }: propsType) => {
               );
             })}
           <Dialog>
-            <DialogTrigger>
+            <DialogTrigger asChild>
               <button className="w-9 h-9 flex justify-center items-center rounded-full bg-[#0c4b78]">
                 <p className="text-white my-2 mx-4">+</p>
               </button>
